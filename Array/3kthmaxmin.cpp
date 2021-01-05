@@ -5,6 +5,7 @@
 using namespace std;
 
 int kthSmallest(int *, int, int, int);
+int kthSmallest_2(int arr[], int l, int r, int k);
  
 int main()
 {
@@ -25,6 +26,7 @@ int main()
         int k;
         cin>>k;
         cout<<kthSmallest(a, 0, number_of_elements-1, k)<<endl;
+        cout<<kthSmallest_2(a, 0, number_of_elements-1, k)<<endl;
     }
     return 0;
 }// } Driver Code Ends
@@ -81,7 +83,7 @@ int kthSmallest(int arr[], int l, int r, int k) {
 //2nd method and preferred, sorting algorithm is used.
 // Time complexity: O(nlogn)
 //Space complexity: O(n)
-int kthSmallest(int arr[], int l, int r, int k) {
+int kthSmallest_2(int arr[], int l, int r, int k) {
     //code here
    int n=r-l+1;
    sort(arr,arr+n);
