@@ -12,9 +12,9 @@ int main()
     // ios_base::sync_with_stdio(false);
     // cin.tie(NULL);
     
-    int test_case;
-    cin>>test_case;
-    while(test_case--)
+    int test;
+    cin>>test;
+    while(test--)
     {
         int number_of_elements;
         cin>>number_of_elements;
@@ -80,7 +80,7 @@ int kthSmallest(int arr[], int l, int r, int k) {
     return INT_MAX; 
 }
 
-//2nd method and preferred, sorting algorithm is used.
+//2nd method, sorting algorithm is used.
 // Time complexity: O(nlogn)
 //Space complexity: O(n)
 int kthSmallest_2(int arr[], int l, int r, int k) {
