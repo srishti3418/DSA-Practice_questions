@@ -1,3 +1,7 @@
+//Most optimized solution
+//TC: O(m*n)
+//SC: O(n)
+
 vector<int> findCommonElements(vector<vector<int>> &mat)
 {
     //    Write your code here
