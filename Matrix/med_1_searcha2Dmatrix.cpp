@@ -13,11 +13,7 @@ public:
             else if(matrix[i][n-1]<target)
                 continue;
             else{
-                int ans=binary_search(matrix[i].begin(),matrix[i].end(),target);
-                if(ans>0)
-                    return true;
-                else
-                    return false;
+                return binary_search(matrix[i].begin(),matrix[i].end(),target);
             }
         }
         return false;
