@@ -1,6 +1,6 @@
 /*
   Reverse a linked list
-  The input list will have at least one element  
+  The input list will have least one element  
   Return the node which points to the head of the new LinkedList
   Node is defined as 
     struct node
