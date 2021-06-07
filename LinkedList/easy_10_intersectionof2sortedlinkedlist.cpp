@@ -20,14 +20,12 @@ Node* findIntersection(Node* head1, Node* head2)
 {
     // Your Code Here
     Node *head=NULL;
-    Node *temp=NULL;
+    Node *temp;
     while(head1!=NULL && head2!=NULL){
         if(head1->data == head2->data){
             if(head==NULL){
-                Node *newhead=new Node(head1->data);
-                newhead->next=NULL;
-                temp=newhead;
-                head=newhead;
+                temp=new Node(head1->data);
+                head=temp;
             }
             else{
                 Node *newnode=new Node(head1->data);
