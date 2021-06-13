@@ -29,11 +29,12 @@ int main() {
 }
 
 // } Driver Code Ends
-
-
+//This is not the optimal approach cause we need to traverse the array 2 times.
+//Time complexity: O(n)
+//Space complexity: O(1)
 void sort012(int arr[], int n)
 {
-    // coode here
+    // code here
     int a=0;
     int b=0;
     int c=0;
@@ -63,5 +64,28 @@ void sort012(int arr[], int n)
         }
 }
 
+//Optimized solution(Dutch national flag approach)
 //Time complexity: O(n)
 //Space complexity: O(1)
+void sort012(int arr[], int n){
+    int low=0;
+    int mid=0;
+    int high=n-1;
+    
+    while(mid<=high){
+        switch(arr[mid]){
+            case 0:
+               swap(arr[low++], arr[mid++]);
+               break;
+            case 1:
+                mid++;
+                break;
+            caase 2:
+                swap(arr[mid], arr[high--]);
+                break;
+        }
+    }
+    
+}
+
+
