@@ -11,9 +11,9 @@ struct Node
 };
 */
 
-//getting segmentation fault on geeksforgeeks
+//Most optimized solution
 //TC: O(n)
-//SC: O(n)
+//SC: O(1)
 class Solution{
 public:
     Node* divide(int N, Node *head){
@@ -21,51 +21,28 @@ public:
         if(head==NULL || head->next==NULL)
             return head;
             
-        Node *temp1, *temp2, *ohead, *ehead;
-        int c1=0, c2=0, x;
+        Node *oddD=new Node(0);
+        Node *evenD=new Node(0);
+        Node *odd=oddD;
+        Node *even=evenD;
         
         while(head!=NULL){
-            x=head->data;
-            if(x%2){
-                if(c1){
-                    temp1->next=new Node(x);
-                    temp1=temp1->next;
-                }
-                else{
-                    temp1=new Node(x);
-                    ohead=temp1;
-                }
-                c1++;
+            if(head->data & 1){
+                odd->next=head;
+                odd=odd->next;
             }
             else{
-                if(c2){
-                    temp2->next=new Node(x);
-                    temp2=temp2->next;
-                }
-                else{
-                    temp2=new Node(x);
-                    ehead=temp2;
-                }
-                c2++;
+                even->next=head;
+                even=even->next;
             }
             head=head->next;
         }
-        
-        while(ohead!=NULL){
-            if(c2){
-                temp2->next=new Node(ohead->data);
-                temp2=temp2->next;
-            }
-            else{
-                temp2=new Node(ohead->data);
-                ehead=temp2;
-                c2++;
-            }
-            ohead=ohead->next;
-        }
-        return ehead;
-           
+        if(evenD->next==NULL)
+            evenD->next=oddD->next;
+        else
+            even->next=oddD->next;
+        odd->next=NULL;
+        return evenD->next;
     }
     
 };
-
