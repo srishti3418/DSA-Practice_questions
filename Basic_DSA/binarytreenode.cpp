@@ -101,7 +101,7 @@ void mirror(binarytreenode<int>*root){
 		return;
 	binarytreenode<int>*temp=root->left;
 	root->left=root->right;
-	root->left=temp;
+	root->right=temp;
 	mirror(root->left);
 	mirror(root->right);
 					}
