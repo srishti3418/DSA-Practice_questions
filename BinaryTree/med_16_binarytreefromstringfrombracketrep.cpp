@@ -50,6 +50,9 @@ int calculateindex(string str, int si, int ei){
     return -1;
 }
 
+//Brute force approach(Using stack)
+//TC: O(n^2)
+//SC: O(n)
 Node *treefromstring(string str, int si, int ei){
     if(si>ei)
         return NULL;
@@ -68,6 +71,9 @@ Node *treefromstring(string str, int si, int ei){
     return root;
 }
 
+//Most optimized solution
+//TC: O(n)
+//SC: O(??)
 Node *treefromstring(string str, int *start){
     if(str.length()==0 || *start>=str.length())
         return NULL;
@@ -76,7 +82,7 @@ Node *treefromstring(string str, int *start){
     while(*start<str.length() && str[*start]!='(' && str[*start]!=')'){
         int num_int = str[*start]-'0';
         num = num*10 + num_int;
-        *start++;
+        (*start)++;
     }
 
     Node *root=createnode(num);
@@ -85,20 +91,20 @@ Node *treefromstring(string str, int *start){
         return root;
 
     if(*start<str.size() && str[*start]=='('){
-        *start++;
-        root->left=treefromstring(str, *start);
+        (*start)++;
+        root->left=treefromstring(str, start);
     }
 
     if(*start<str.size() && str[*start]==')')
-        *start++;
+        (*start)++;
 
     if(*start<str.size() && str[*start]=='('){
-        *start++;
-        root->right=treefromstring(str, *start);
+        (*start)++;
+        root->right=treefromstring(str, start);
     }
 
-    if(start<str.size() && str[start]==')')
-        start++;
+    if(*start<str.size() && str[*start]==')')
+       (*start)++;
 
     return root;
 
