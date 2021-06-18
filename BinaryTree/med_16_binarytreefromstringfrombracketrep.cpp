@@ -73,7 +73,7 @@ Node *treefromstring(string str, int si, int ei){
 
 //Most optimized solution
 //TC: O(n)
-//SC: O(??)
+//SC: O(height of the tree)
 Node *treefromstring(string str, int *start){
     if(str.length()==0 || *start>=str.length())
         return NULL;
