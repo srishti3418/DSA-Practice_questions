@@ -28,8 +28,8 @@ string checkduplicates(node *root, unordered_map<string, int> &m){
         return s;
     }
     s = s+to_string(root->data);
-    s = s+checkduplicates(root->left);
-    s = s+checkduplicates(root->right);
+    s = s+checkduplicates(root->left, m);
+    s = s+checkduplicates(root->right, m);
     m[s]++;
     return s;
 
