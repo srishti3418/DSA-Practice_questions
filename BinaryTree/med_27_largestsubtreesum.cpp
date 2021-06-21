@@ -19,6 +19,7 @@ class node{
         }
 };
 
+//Using postorder traversal
 int max_sum(node *root, int &ans){
     if(root==NULL)
         return 0;
