@@ -30,7 +30,7 @@ string checkduplicates(node *root, unordered_map<string, int> &m){
     s = s+to_string(root->data);
     s = s+checkduplicates(root->left);
     s = s+checkduplicates(root->right);
-
+    m[s]++;
     return s;
 
 }
