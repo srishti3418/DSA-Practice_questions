@@ -22,7 +22,7 @@ class node{
 string checkduplicates(node *root, unordered_map<string, int> &m){
     string s="";
     if(!root)
-        return '$';
+        return "$";
     if(!root->left && !root->right){
         s=to_string(root->data);
         return s;
