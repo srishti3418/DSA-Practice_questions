@@ -29,7 +29,7 @@ int max_sum(node *root, int &ans){
     int sum=leftpart+rightpart+root->data;
     
     ans=max(ans, sum);
-    return sum;
+    return ans;
 }
 
 
