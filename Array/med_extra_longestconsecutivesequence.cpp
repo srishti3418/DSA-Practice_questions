@@ -1,3 +1,4 @@
+//Most optimized solution
 //TC: O(n)
 //SC: O(n)
 class Solution {
