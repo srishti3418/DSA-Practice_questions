@@ -1,3 +1,5 @@
+//TC: O(V+E)
+//SC: O(V)
 vector<int> DFS(vector<int> &result, int V, vector<int> adj[], int start, vector<int> &visited){
     
     result.push_back(start);
