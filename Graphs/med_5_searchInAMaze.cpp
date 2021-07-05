@@ -1,3 +1,5 @@
+//TC: O(4^(n^2))
+//SC: O(n^2)
 class Solution{
     public:
     void printAllPath(int i, int j, vector<vector<int>> &m, int n, vector<vector<int>> &visited, vector<string> &ans, string s){
