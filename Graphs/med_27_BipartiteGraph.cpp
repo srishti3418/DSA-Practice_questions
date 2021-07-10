@@ -1,5 +1,5 @@
 //TC: O(N+E) {BFS traversal}
-//SC: O(N+E)+O(N)+O(N)
+//SC: O(N+E)+O(N)+O(N) ~ O(N+E)
 #include <iostream>
 #include <vector>
 #include <queue>
