@@ -44,15 +44,15 @@ int main()
     {
         for (auto it : edges)
         {
-            if (dist[it.u] + it.wt < dist[v])
-                dist[v] = dist[it.u] + it.wt;
+            if (dist[it.u] + it.wt < dist[it.v])
+                dist[it.v] = dist[it.u] + it.wt;
         }
     }
 
     int fl = 0;
     for (auto it : edges)
     {
-        if (dist[it.u] + it.wt < dist[v])
+        if (dist[it.u] + it.wt < dist[it.v])
         {
             fl = 1;
             cout << "negative cycle is present" << endl;
