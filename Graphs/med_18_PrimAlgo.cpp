@@ -34,7 +34,7 @@ int main()
     Parent[0] = -1;
     pq.push(make_pair(0, 0));
 
-    for (int count = 0; count < N - 1; count++)
+    for (!pq.empty())
     {
         int u = pq.top().second;
         pq.pop();
