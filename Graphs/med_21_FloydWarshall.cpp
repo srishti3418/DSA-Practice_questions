@@ -26,7 +26,7 @@ void Floyd_warshall(int graph[V][V])
     {
         if (graph[i][i] < 0)
         {
-            cout << "Negative edge weight is present in the graph" << endl;
+            cout << "Negative cycle is present in the graph" << endl;
             break;
         }
     }
