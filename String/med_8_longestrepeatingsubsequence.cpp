@@ -21,4 +21,4 @@ class Solution {
 
 //Most optimized solution (dynamic programming)
 //TC: O(n^2)
-//SC: O(n^2)
+//SC: O(2n)
