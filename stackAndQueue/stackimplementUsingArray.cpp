@@ -28,7 +28,13 @@ public:
     }
     void pop()
     {
+        if (i == 0)
+        {
+            cout << "stack is empty, can't pop out" << endl;
+            return;
+        }
         i--;
+        return;
     }
     bool isEmpty()
     {
@@ -53,6 +59,7 @@ int main()
     int n;
     cin >> n;
     stack s(n);
+    s.pop();
     s.push(3);
     if (s.isEmpty())
         cout << "stack is empty" << endl;
