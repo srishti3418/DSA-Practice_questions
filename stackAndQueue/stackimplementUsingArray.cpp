@@ -44,6 +44,17 @@ public:
     {
         return i;
     }
+    int top()
+    {
+        if (i == 0)
+        {
+            cout << "No element is present, stack is empty" << endl;
+            return -1;
+        }
+        int j = i;
+        j--;
+        return arr[j];
+    }
     void print()
     {
         for (int j = 0; j < i; j++)
@@ -71,6 +82,7 @@ int main()
     s.pop();
     s.pop();
     s.push(8);
+    cout << "Top element: " << s.top() << endl;
     cout << "Final size " << s.size() << endl;
     s.print();
 }
