@@ -68,7 +68,7 @@ int main()
     queue q(n);
     if (q.isEmpty())
         cout << "queue is empty" << endl;
-    cout << "Initial size: " << q.Size() << endl;
+    //cout << "Initial size: " << q.Size() << endl;
     q.enqueue(2);
     q.enqueue(1);
     q.enqueue(7);
