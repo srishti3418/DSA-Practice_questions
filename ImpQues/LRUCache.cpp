@@ -83,7 +83,13 @@ public:
         if (store.find(key) == store.end())
             return -1;
         else
+        {
+            node *temp = store[key];
+            temp->prev->next = temp->next;
+            temp->next->prev = temp->prev;
+            insert(key, ourmap[key]);
             return ourmap[key];
+        }
     }
 };
 
