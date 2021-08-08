@@ -14,25 +14,16 @@ void nextsmaller(vector<int> &res, vector<int> &vec, int n)
     stack<int> s;
     for (int i = n - 1; i >= 0; i--)
     {
-        if (s.empty())
-        {
-            s.push(vec[i]);
-            continue;
-        }
         while (!s.empty() && s.top() >= vec[i])
         {
             s.pop();
         }
-        if (s.empty())
-        {
-            s.push(vec[i]);
-            continue;
-        }
-        else if (s.top() < vec[i])
+
+        if (!s.empty() && s.top() < vec[i])
         {
             res[i] = s.top();
-            s.push(vec[i]);
         }
+        s.push(vec[i]);
     }
 }
 
