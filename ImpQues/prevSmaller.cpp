@@ -10,24 +10,15 @@ void prevSmaller(vector<int> &vec, vector<int> &res, int n)
     stack<int> s;
     for (int i = 0; i < n; i++)
     {
-        if (s.empty())
-        {
-            s.push(vec[i]);
-            continue;
-        }
         while (!s.empty() && s.top() >= vec[i])
         {
             s.pop();
         }
-        if (s.empty())
-        {
-            s.push(vec[i]);
-        }
-        else if (s.top() < vec[i])
+        if (!s.empty() && s.top() < vec[i])
         {
             res[i] = s.top();
-            s.push(vec[i]);
         }
+        s.push(vec[i]);
     }
 }
 
